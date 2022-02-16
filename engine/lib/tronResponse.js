@@ -2,7 +2,8 @@
 var appConfig = require('./appConfig')
 var logger = require("./logger")
 var httpUtil = require("./httpUtil")
-var newrelic = require('newrelic');
+//var newrelic = require('newrelic');
+const randUser = require('./randUsers');
 //var users = require('./users')
 
 
@@ -108,7 +109,13 @@ class TronResponse{
 
     buildJsonResponse(httpResponse, data){
       //set username
-      newrelic.addCustomAttributes("{username: 'ryan@gmail.com',workerCategory : 'logistics'}")
+      let newUser =  {
+        email: 'tom@petty.com',
+        name: 'Tom Petty',
+        workerCategory: 'Logistics'
+      };
+      //randUser.getAll();
+      newrelic.addCustomAttributes(newUser)
       for (const [key, value] of this.headerMap) {
         httpResponse.header(key, value)
       }
