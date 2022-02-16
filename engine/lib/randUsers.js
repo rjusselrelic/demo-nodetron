@@ -4,16 +4,16 @@ var logger = require("./logger")
 
 class randUser{
     constructor(){
-        //this.name = ''
-        //this.userName = ''
-        //this.workerCategory = ''
+        this.name = 'Ryan Jussel'
+        this.userName = 'ryan@googlemail.com'
+        this.workerCategory = 'Maintenance'
         //this.IPaddress =''
     }
-    setName(string){
-        this.name.set(string)
+    setName(val){
+        this.name.set(val)
     }
-    setUserName(string){
-        this.userName.set(string)
+    setUserName(val){
+        this.userName.set(val)
     }
     getAll(){
         this.setUserName('tom@petty.com')

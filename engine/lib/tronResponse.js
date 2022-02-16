@@ -108,14 +108,6 @@ class TronResponse{
     }
 
     buildJsonResponse(httpResponse, data){
-      //set username
-      let newUser =  {
-        email: 'tom@petty.com',
-        name: 'Tom Petty',
-        workerCategory: 'Logistics'
-      };
-      //randUser.getAll();
-      newrelic.addCustomAttributes(newUser)
       for (const [key, value] of this.headerMap) {
         httpResponse.header(key, value)
       }
